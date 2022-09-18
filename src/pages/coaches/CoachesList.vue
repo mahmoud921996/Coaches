@@ -10,7 +10,6 @@
     <section>
       <coach-filter @change-filter="setFilters"></coach-filter>
     </section>
-
     <section>
       <base-card>
         <div class="controls">
@@ -47,8 +46,6 @@
   </div>
 </template>
 
-
-
 <script>
 import CoachFilter from "../../components/coaches/CoachFilter.vue";
 import CoachItem from "../../components/coaches/CoachItem.vue";
@@ -68,6 +65,7 @@ export default {
       backend: true,
       career: true,
     });
+
     const filteredCoaches = computed(function () {
       const coachList = store.getters["coaches/coaches"];
       return coachList.filter((coach) => {
@@ -87,9 +85,11 @@ export default {
     const isCoach = computed(function () {
       return store.getters["coaches/isCoach"];
     });
+
     function setFilters(updatedFilters) {
       activeFilter.value = updatedFilters;
     }
+
     async function loadCoaches(refresh = false) {
       isLoading.value = true;
       try {
@@ -114,6 +114,7 @@ export default {
     const isLoggedIn = computed(function () {
       return store.getters.isAuthenticated;
     });
+
     return {
       setFilters,
       filteredCoaches,
@@ -128,7 +129,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 ul {

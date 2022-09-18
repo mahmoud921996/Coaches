@@ -9,9 +9,9 @@ import BaseSpinner from "./components/ui/BaseSpinner.vue";
 
 const app = createApp(App);
 
-const BaseDialogue = defineAsyncComponent(() => {
-  import("./components/ui/BaseDialogue.vue");
-});
+const BaseDialogue = defineAsyncComponent(() =>
+  import("./components/ui/BaseDialogue.vue")
+);
 
 app.component("base-badge", BaseBadge);
 app.component("base-button", BaseButton);
